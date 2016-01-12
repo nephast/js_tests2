@@ -53,24 +53,33 @@ console.log(arr5);
 var secret = ['bleu', 'rouge', 'vert', 'jaune'];
 console.log('secret is: ' + secret);
 
-var guess1 = ['jaune','vert','rouge','bleu'];
-console.log('guess is : ' + guess1)
+
+var guess1 = ['jaune','rouge','rouge','bleu'];
+console.log('guess is : ' + guess1);
 
 function matchArrays(arr, fn) {
     
     var newArray = [];
     for (i= 0; i <secret.length; i++){
         newArray.push(
-        func(arr[i]))
+        fn(arr[i]))
     };
     return newArray;
 }
 
-var answer1 = matchArray(secret, function(item) {
-    if secret[0]===guess1[0]
-   return item + ' ' + 'traduction ici'; 
+
+var a = matchArrays(secret, function(item) {
+    if (secret[i]===guess1[i]){
+   return item + ' ' + 'IDENTIQUE'; 
+    }
+    else
+        { return item + ' ' + 'DIFFERENT'; 
+        }
 });
-console.log(reponse1);
+console.log(a);
+
+
+
 
 
 
